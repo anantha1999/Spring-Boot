@@ -13,7 +13,7 @@ Run the microservices 'demo' and 'demo1' with gradle
   #### port 8082
 - To start the ping pong send a request to url
   ### /start
-  on any of the two ports.
+  on any of the two microservices.
 - Similarly, to stop the ping pong send a request to url
   ### /stop
   
