@@ -3,9 +3,19 @@ Spring Boot micro services that send requests to each other in ping pong fashion
 
 ## How to run
 
-Run the project with gradle
+Run the microservices 'demo' and 'demo1' with gradle
 
   #### ./gradlew bootrun
+  
+- 'demo' runs on 
+  #### port 8080
+- 'demo1' runs on 
+  #### port 8082
+- To start the ping pong send a request to url
+  ### /start
+  on any of the two ports.
+- Similarly, to stop the ping pong send a request to url
+  ### /stop
   
 ## What you need
 
