@@ -9,7 +9,7 @@ Run the project with gradle
   
 ## What you need
 
-- Two postgres instances running on port 5433 and 5434.
+- Two postgres instances running on ports 5433 and 5434.
 - For port 5433 :
   * Create a database 'microservice2' and a table 'messages'.
   * Create a role called 'user2' with password set to 'password'.
