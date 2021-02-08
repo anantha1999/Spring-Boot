@@ -24,7 +24,7 @@ Run the microservices 'demo' and 'demo1' with gradle
   * Create a database 'microservice2' and a table 'messages'.
   * Create a role called 'user2' with password set to 'password'.
   * Grant access to table 'messages' to the role 'user2'.
-- For port 5433 :
+- For port 5434 :
   * Create a database 'microservice1' and a table 'messages'.
   * Create a role called 'microservice1' with password set to 'password'.
   * Grant access to table 'messages' to the role 'microservice1'.
