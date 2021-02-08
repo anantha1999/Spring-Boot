@@ -58,11 +58,11 @@ public class KafkaConsumer {
         return "Stopped ping pong!";
     }
 
-    @RequestMapping("/consumer") //Redirected request to set sendMessage to true which activates the loop
-    public String updateSendMessage(){
-        sendMessage = true;
-        System.out.println("Redirected!!!");
-        kafkaTemplate.send("microservice1", new Messages(0, "start"));
-        return "Started Ping Pong!";
-    }
+    // @RequestMapping("/consumer") //Redirected request to set sendMessage to true which activates the loop
+    // public String updateSendMessage(){
+    //     sendMessage = true;
+    //     System.out.println("Redirected!!!");
+    //     kafkaTemplate.send("microservice1", new Messages(0, "start"));
+    //     return "Started Ping Pong!";
+    // }
 }

@@ -27,14 +27,19 @@ public class KafkaController {
     @Autowired
     private KafkaTemplate<String, Messages> kafkaTemplate;
 
+    @Autowired
+    private KafkaConsumer kafkaconsumer;
+
+
     @RequestMapping("/start") //Redirect the request to KafkaConsumer to activate the loop
     public String sendMessage(HttpServletResponse response) throws IOException {
         
         
         // kafkaTemplate.send("microservice2", new Messages(0, "start"));
-         System.out.println("REDIRECTINGGGG");
-         response.sendRedirect("/consumer");
-        return "Redirected";
+        kafkaconsumer.sendMessage = true;
+        System.out.println("Producer - Done setting sendMessage");
+        kafkaTemplate.send("microservice2", new Messages(0, "start"));
+        return "Started Ping Pong";
     }
     
     

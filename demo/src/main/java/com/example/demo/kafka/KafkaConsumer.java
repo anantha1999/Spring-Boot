@@ -6,6 +6,8 @@ import com.example.demo.messages.Messages;
 import com.example.demo.sql.Model.MessagesTable;
 import com.example.demo.sql.Repo.MessageRepository;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,8 @@ public class KafkaConsumer {
     @Autowired
     MessageRepository repository;
     
+    
+
     @Autowired
     private KafkaTemplate<String, Messages> kafkaTemplate;
 
@@ -57,10 +61,11 @@ public class KafkaConsumer {
         return "Stopped ping pong!";
     }
 
-    @RequestMapping("/consumer") //Redirected request to set sendMessage to true which activates the loop
-    public String updateSendMessage(){
-        sendMessage = true;
-        kafkaTemplate.send("microservice2", new Messages(0, "start"));
-        return "Started Ping Pong!";
-    }
+    
+    // @RequestMapping("/consumer") //Redirected request to set sendMessage to true which activates the loop
+    // public String updateSendMessage(){
+    //     sendMessage = true;
+    //     kafkaTemplate.send("microservice2", new Messages(0, "start"));
+    //     return "Started Ping Pong!";
+    // }
 }

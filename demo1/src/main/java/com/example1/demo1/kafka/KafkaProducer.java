@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class KafkaProducer {
 
-    private boolean stop = true;
+    // private boolean stop = true;
 
     KafkaConsumer consumer = new KafkaConsumer();
     // int id = 0;
@@ -28,14 +28,18 @@ public class KafkaProducer {
     @Autowired
    	private KafkaTemplate<String, Messages> kafkaTemplate;
 
+    @Autowired
+    private KafkaConsumer kafkaconsumer;
+
     @RequestMapping("/start")
     public String sendMessage(HttpServletResponse response) throws IOException {
         
         
         // kafkaTemplate.send("microservice2", new Messages(0, "start"));
-         System.out.println("REDIRECTINGGGG");
-         response.sendRedirect("/consumer");
-        return "Redirected";
+        kafkaconsumer.sendMessage = true;
+        System.out.println("Producer - Done setting sendMessage");
+        kafkaTemplate.send("microservice1", new Messages(0, "start"));
+        return "Started Ping Pong";
     }
     
        
